@@ -15,7 +15,10 @@ bool isConnected = false;
 // -----------------------------------------------------------------------------
 void setup()
 {
-  MIDI.begin();
+
+  MIDI.begin();  // Listen for MIDI messages on channel 1
+  //MIDI.begin(3);  // Listen for MIDI messages on channel 3
+  //MIDI.begin(0);  // Listen for MIDI messages on all channels (omni)
 
   pinMode(LED_BUILTIN, OUTPUT);
   digitalWrite(LED_BUILTIN, LOW);
