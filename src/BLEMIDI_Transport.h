@@ -10,6 +10,8 @@
 #include "BLEMIDI_Defs.h"
 #include "BLEMIDI_Namespace.h"
 
+extern char g_mDeviceName[24];
+
 BEGIN_BLEMIDI_NAMESPACE
 
 template<class T, class _Settings = DefaultSettings>
@@ -45,7 +47,8 @@ public:
 	
     void begin()
     {
-        mBleClass.begin(mDeviceName, this);
+        // mBleClass.begin(mDeviceName, this);
+        mBleClass.begin(g_mDeviceName, this);
     }	
 
     void end()
